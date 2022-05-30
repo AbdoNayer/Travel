@@ -14,7 +14,7 @@
 
 body {
   overflow-x: hidden;
-  // overflow-y: hidden;
+  overflow-y: hidden;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -82,51 +82,27 @@ button{
   overflow: hidden;
   position: relative;
   border-radius: 5px;
+  &:hover{
+    transform: scale(0.9);
+  }
 }
 
 .btn-default{
   border: 1px solid var(--mainColor) !important;
-  &::after{
-    content: "";
-    width: 50%;
-    height: 100%;
-    @include transition(0.5s);
-    @include positionItem(absolute, 0, auto, 0, auto, initial);
-    background-color: var(--mainColor);
-  }
-  &::before{
-    content: "";
-    width: 50%;
-    height: 100%;
-    @include transition(0.5s);
-    @include positionItem(absolute, 0, auto, auto, 0, initial);
-    background-color: var(--mainColor);
-  }
-  span{
-    color: var(--white) !important;
-    position: relative;
-    z-index: 9;
-    @include transition(0.5s);
-  }
-  &:hover{
-    background-color: var(--white);
-    &::after ,&::before{
-      height: 0;
-    }
-    span{
-      color: var(--mainColor) !important;
-    }
-  }
+  background-color: var(--mainColor) !important;
+  color: var(--white) !important;
+}
+
+.btn-white{
+  border: 1px solid var(--white) !important;
+  background-color: var(--white) !important;
+  color: var(--mainColor) !important;
 }
 
 // Classes Colors
 
 .color-default{
   color: var(--mainColor) !important;
-}
-
-.bg-default{
-  background-color: var(--mainColor) !important;
 }
 
 .color-black{
@@ -149,132 +125,4 @@ button{
   color: var(--white);
 }
 
-// Style Form Validation
-
-input{
-  width: 100%;
-  padding: 10px 20px;
-  border: 1px solid var(--mainColor);
-  color: var(--mainColor);
-  background-color: var(--white);
-  height: 50px;
-  font-size: 14px;
-  border-radius: 5px;
-  font-weight: bold;
-  @include transition(0.5s);
-}
-
-textarea{
-  width: 100%;
-  padding: 10px 20px;
-  border: 1px solid var(--mainColor);
-  color: var(--mainColor);
-  background-color: var(--white);
-  font-size: 14px;
-  resize: none;
-  min-height: 210px;
-  border-radius: 5px;
-  font-weight: bold;
-  @include transition(0.5s);
-}
-
-::-webkit-input-placeholder,
-::-moz-placeholder,
-:-ms-input-placeholder,
-:-moz-placeholder{
-  color: var(--mainColor);
-  opacity: 1;
-}
-
-input, textarea{
-  &:focus::-webkit-input-placeholder{
-    opacity: 0;
-  }
-}
-
-input, textarea {
-  &:focus{
-    border-color: var(--mainColor) !important;
-  }
-}
-
-// Back Translate
-.back{
-  transform: translate(0) !important;
-}
-
-//  Slider Owl
-
-.owl-carousel{
-display: block;
-width: 100%;
--webkit-tap-highlight-color: transparent;
-position: relative;
-direction: ltr;
-  .owl-nav{
-    display: none;
-  }
-}
-
 // Loading Page
-
-.loader{
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--white);
-  z-index: 99999;
-  .loading{
-    position: relative;
-    top: -50px;
-    span {
-      display: block;
-      position: absolute;
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      animation: speed 2s infinite ease-in-out;
-      &:nth-child(1) {
-        background: var(--mainColor);
-        animation-delay: 1.5s;
-      }
-      &:nth-child(2) {
-        background: var(--black);
-        animation-delay: 1s;
-      }
-      &:nth-child(3) {
-        background: var(--mainColor);
-        animation-delay: 0.5s;
-      }
-      &:nth-child(4) {
-        background: var(--black);
-      }
-    }
-  }
-}
-
-@keyframes speed {
-  0% {
-    transform: translate(0%);
-    border-radius: 50%;
-  }
-  25% {
-    transform: translate(150%) scale(0.5);
-    border-radius: 0%;
-  }
-
-  50% {
-    transform: translate(150%, 150%);
-    border-radius: 50%;
-  }
-  75% {
-    transform: translate(0, 150%) scale(0.5);
-    border-radius: 0%;
-  }
-} 
-
