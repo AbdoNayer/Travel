@@ -1,0 +1,26 @@
+// Mixin
+
+@mixin transition($time){
+    transition: all $time ease-in-out;
+    -o-transition: all $time ease-in-out;
+    -moz-transition: all $time ease-in-out;
+    -webkit-transition: all $time ease-in-out;
+}
+
+@mixin scrollContain{
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    will-change: scroll-position;
+    contain: size style layout;
+}
+
+@mixin positionItem($position, $top, $bottom, $left, $right, $translate){
+    position: $position;
+    top: $top;
+    bottom: $bottom;
+    transform: $translate;
+    left: $left;
+    right: $right;
+    margin: auto;
+}

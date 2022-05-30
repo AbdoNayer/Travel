@@ -1,0 +1,212 @@
+// Header
+header{
+    position: relative;
+    z-index: 9;
+    .logo{
+        color: transparent;
+        -webkit-text-stroke: 2px var(--secondColor);
+        position: relative;
+        font-family: system-ui;
+        &:before{
+            content: "Sh3wiZo";
+            text-align: center;
+            color: var(--secondColor);
+            animation: animate44 4s ease-in-out infinite;
+            @include positionItem(absolute, 50%, auto, 0, 0, translateY(-50%));
+        }
+    }
+    @keyframes animate44 {
+        0%,
+        100% {
+            clip-path: polygon(
+            0% 45%,
+            16% 44%,
+            33% 50%,
+            54% 60%,
+            70% 61%,
+            84% 59%,
+            100% 52%,
+            100% 100%,
+            0% 100%
+            );
+        }
+        
+        50% {
+            clip-path: polygon(
+            0% 60%,
+            15% 65%,
+            34% 66%,
+            51% 62%,
+            67% 50%,
+            84% 45%,
+            100% 46%,
+            100% 100%,
+            0% 100%
+            );
+        }
+    }
+    ul{
+        li{
+            a{
+                color: var(--secondColor);
+                font-weight: bold;
+                &:hover{
+                    color: var(--mainColor);
+                }
+            }
+        }
+    }
+}
+
+// Text Head
+.head-text{
+    @include positionItem(absolute, 30%, auto, 0, 0, initial);
+    width: 100%;
+    text-align: center;
+    // Text Animation
+    .dynamic-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .gold-title {
+            color: var(--secondColor);
+        }
+        .cd-words-wrapper {
+            display: inline-block;
+            position: relative;
+            -webkit-perspective: 300px;
+            -moz-perspective: 300px;
+            perspective: 300px;
+            vertical-align: top;
+            overflow: hidden;
+            b {
+                @include positionItem(absolute, 0, auto, 0, 0, initial);
+                display: inline-block;
+                white-space: nowrap;
+                margin: auto;
+                font-style: normal;
+                opacity: 0;
+                &.is-visible {
+                    position: relative;
+                    opacity: 1;
+                }
+            }
+        }
+        span{
+            display: inline-block;
+            font-size: 30px;
+        }
+    }
+    p{
+        max-width: 600px;
+        margin: 20px auto;
+        color: var(--mainColor);
+    }
+}
+
+// Social Media
+.social-media{
+    li{
+        a{
+            width: 35px;
+            height: 35px;
+            border: 1px solid var(--mainColor);
+            color: var(--mainColor);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 5px 10px;
+            position: relative;
+            overflow: hidden;
+            z-index: 9;
+            &::after{
+                content: "";
+                background-color: var(--mainColor);
+                @include positionItem(absolute, -100%, auto, auto, 0, initial);
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                visibility: hidden;
+                @include transition(0.5s);
+                z-index: -1;
+            }
+            &:hover{
+                border-radius: 0;
+                i{
+                    color: var(--white) !important;
+                }
+                &::after{
+                    top: 0;
+                    opacity: 1;
+                    visibility: initial;
+                }
+            }
+        }
+    }
+}
+
+// Background Parallax
+.bg-parallax{
+    background-color: #FEDCC8;
+    overflow: hidden;
+    position: relative;
+    .parallax {
+        perspective: 100px;
+        overflow-x: hidden;
+        position: relative;
+        width: 100%;
+        height: 100vh;
+    }
+    .parallax__layer{
+        @include positionItem(absolute, 0, 0, 0, 0, initial);
+        img{
+            @include positionItem(absolute, auto, 0, 50%, auto, translateX(-50%));
+            display: block;
+        }
+    }
+    .parallax__cover{
+        background:var(--mainColor);
+        display: block;
+        position: relative;
+        top: 100%;
+        z-index: 2;
+        width: 100%;
+        &::after{
+            content: "";
+            background:var(--mainColor);
+            @include positionItem(absolute, -128px, auto, 0, 0, initial);
+            height: 128px;
+            width: 100%;
+        }
+    }
+    $parallax__layers: 6;
+    @for $i from 0 through $parallax__layers {
+    $x: ($parallax__layers - $i) / 2;
+        .parallax__layer__#{$i}{
+            transform: translateZ(-100 * $x#{px}) scale($x + 1);
+        }
+    }
+}
+
+// Hover Image Effect
+.about {
+    background-color: #FFF;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px 0;
+    border: 1px solid #DDD;
+    .img{
+        img{
+            width: 100%;
+            height: 300px;
+        }
+    }
+    .info{
+        text-align: center;
+        padding: 20px;
+    }
+}
+  
+
+
