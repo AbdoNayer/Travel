@@ -175,8 +175,8 @@ header{
         &::after{
             content: "";
             background:var(--mainColor);
-            @include positionItem(absolute, -128px, auto, 0, 0, initial);
-            height: 128px;
+            @include positionItem(absolute, -80px, auto, 0, 0, initial);
+            height: 80px;
             width: 100%;
         }
     }
@@ -196,6 +196,7 @@ header{
     overflow: hidden;
     margin: 20px 0;
     border: 1px solid #DDD;
+    text-align: center;
     .img{
         img{
             width: 100%;

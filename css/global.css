@@ -589,14 +589,14 @@ header ul li a:hover {
   content: "";
   background: var(--mainColor);
   position: absolute;
-  top: -128px;
+  top: -80px;
   bottom: auto;
   -webkit-transform: initial;
           transform: initial;
   left: 0;
   right: 0;
   margin: auto;
-  height: 128px;
+  height: 80px;
   width: 100%;
 }
 
@@ -641,6 +641,7 @@ header ul li a:hover {
   overflow: hidden;
   margin: 20px 0;
   border: 1px solid #DDD;
+  text-align: center;
 }
 
 .about .img img {
@@ -651,5 +652,19 @@ header ul li a:hover {
 .about .info {
   text-align: center;
   padding: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .bg-parallax .parallax__cover::after {
+    position: absolute;
+    top: -120px;
+    bottom: auto;
+    -webkit-transform: initial;
+            transform: initial;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 120px;
+  }
 }
 /*# sourceMappingURL=global.css.map */

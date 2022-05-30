@@ -1,5 +1,18 @@
 @media screen and (max-width: 990px){
 
 
+}
+
+@media screen and (max-width: 767px){
+
+    // Background Parallax
+    .bg-parallax{
+        .parallax__cover{
+            &::after{
+                @include positionItem(absolute, -120px, auto, 0, 0, initial);
+                height: 120px;
+            }
+        }
+    }
 
 }
