@@ -1,6 +1,6 @@
 // Font Import Cdn
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
 
 // Local Style Page
 
@@ -15,7 +15,7 @@
 body {
   overflow-x: hidden;
   overflow-y: hidden;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Cairo', sans-serif !important;
 }
 
 a, button, input, textarea, i{
@@ -34,9 +34,6 @@ a{
 
 i{
   vertical-align: middle;
-  &:hover, &:focus{
-    color: var(--mainColor)
-  }
 }
 
 h1,h2,h3,h4,h5,h6,p{
@@ -99,22 +96,7 @@ button{
   color: var(--mainColor) !important;
 }
 
-// Classes Colors
-
-.color-default{
-  color: var(--mainColor) !important;
-}
-
-.color-black{
-  color: var(--black) !important;
-}
-
-.color-white{
-  color: var(--white) !important;
-}
-
 // selection
-
 ::selection {
   background: var(--mainColor);
   color: var(--white);
@@ -125,10 +107,43 @@ button{
   color: var(--white);
 }
 
-// Container
+// Inputs
+input{
+  color: var(--mainColor);
+  font-size: 14px;
+  @include transition(0.5s);
+}
 
+::-webkit-input-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder,
+:-moz-placeholder{
+  color: var(--mainColor);
+  opacity: 1;
+}
+
+input, textarea{
+  &:focus::-webkit-input-placeholder{
+    opacity: 0;
+  }
+}
+
+//  Slider Owl
+.owl-carousel{
+  display: block;
+  width: 100%;
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+  direction: ltr;
+    .owl-nav{
+     display: none;
+    }
+}
+
+// Container
 .container{
-  max-width: 1280px;
+  width: 1300px;
+  margin: auto;
 }
 
 // Loading Page

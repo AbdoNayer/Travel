@@ -2,20 +2,183 @@
 header{
     position: relative;
     z-index: 9;
-    .logo{
-        
-    }
-    ul{
-        li{
-            a{
-                color: var(--secondColor);
-                font-weight: bold;
-                &:hover{
-                    color: var(--mainColor);
+    background-color: var(--mainColor);
+    padding: 15px 0;
+    .head-content{
+        @include flexBox(flex, row, center, space-between);
+        .logo{
+            font-size: 30px;
+            color: var(--white);
+            flex-basis: 20%;
+        }
+        .links-header{
+            @include flexBox(flex, row, center, space-between);
+            flex-basis: 80%;
+            ul{
+                @include flexBox(flex, row, center, space-between);
+                flex: 1;
+                padding-inline-end: 40px;
+                li{
+                    position: relative;
+                    a{
+                        color: var(--white);
+                        position: relative;
+                        &::after{
+                            content: "";
+                            @include positionItem(absolute, auto, -10px, 0, 0, initial);
+                            background-color: var(--white);
+                            width: 0%;
+                            height: 2px;
+                            opacity: 0;
+                            visibility: hidden;
+                            @include transition(0.5s);
+                        }
+                        &:hover{
+                            &::after{
+                                opacity: 1;
+                                visibility: initial;
+                                width: 100%;
+                            }
+                        }
+                        i{
+                            margin: 0 5px;
+                        }
+                    }
+                    &.active{
+                        a{
+                            &::after{
+                                opacity: 1;
+                                visibility: initial;
+                                width: 100%;
+                            }
+                        }
+                    }
+                    &:hover{
+                        .drop-down{
+                            opacity: 1;
+                            visibility: initial;
+                        }
+                    }
+                    .drop-down{
+                        @include positionItem(absolute, auto, -255px, 50%, auto, translateX(-50%));
+                        @include transition(0.5s);
+                        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+                        width: 220px;
+                        background-color: var(--white);
+                        border-radius: 0 0 40px 40px;
+                        overflow: hidden;
+                        opacity: 0;
+                        visibility: hidden;
+                        ul{
+                            @include flexBox(flex, column, center, space-between);
+                            padding: 0;
+                            li{
+                                display: block;
+                                width: 100%;
+                                text-align: center;
+                                a{
+                                    display: block;
+                                    color: var(--mainColor);
+                                    padding: 15px 0;
+                                    &:hover{
+                                        background-color: var(--mainColor);
+                                        color: var(--white);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .head-search{
+                position: relative;
+                padding: 0 30px;
+                a{
+                    color: var(--white);
+                    font-size: 20px;
+                }
+                .view-search{
+                    @include positionItem(absolute, auto, -60px, 20px, auto, initial);
+                    width: 290px;
+                    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+                    opacity: 0;
+                    visibility: hidden;
+                    form{
+                        position: relative;
+                        input{
+                            background-color: var(--white);
+                            padding: 11px;
+                            width: 100%;
+                            font-size: 12px;
+                            font-family: 'Cairo', sans-serif !important;
+                        }
+                        button{
+                            @include positionItem(absolute, auto, 0, 0, auto, initial);
+                            height: 100%;
+                            border-radius: 0;
+                            width: 45px;
+                            background-color: var(--secondColor);
+                            color: var(--white);
+                            font-size: 18px;
+                        }
+                    }
                 }
             }
         }
     }
+}
+
+// Slider Head
+.slider-head{
+    .head-slide{
+        img{
+            height: 700px;
+        }
+        .over-fix{
+            @include positionItem(absolute, 0, 0, 0, 0, initial);
+            @include flexBox(flex, column, initial, center);
+            background-color: rgba(0, 0, 0, 0.3);
+            z-index: 9;
+            direction: rtl;
+            h1{
+                margin: 0;
+                color: var(--white);
+                font-size: 50px;
+                font-weight: normal;
+            }
+            h4{
+                color: var(--white);
+                font-size: 25px;
+                font-weight: normal;
+            }
+        }
+    }
+    .owl-item.active{
+        h1, h4{
+          animation-name: translateInfo;
+          animation-fill-mode: both;
+        }
+        h1{
+          animation-duration: 1s;
+          animation-delay: 1s;
+        }
+        h4{
+          animation-duration: 1.5s;
+          animation-delay: 1.5s;
+        }
+      }
+      @keyframes translateInfo {
+        from {
+          opacity: 0;
+          visibility: hidden;
+          transform: translateY(50px);
+        }
+        to {
+          opacity: 1;
+          visibility: initial;
+          transform: translateY(0px);
+        }
+      }
 }
   
 

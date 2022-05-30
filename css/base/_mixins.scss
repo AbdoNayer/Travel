@@ -15,6 +15,13 @@
     contain: size style layout;
 }
 
+@mixin flexBox($display, $direction, $align-items, $justify-content){
+    display: $display;
+    flex-direction: $direction;
+    align-items: $align-items;
+    justify-content: $justify-content;
+}
+
 @mixin positionItem($position, $top, $bottom, $left, $right, $translate){
     position: $position;
     top: $top;

@@ -41,3 +41,37 @@ $(window).on('load', function () {
     AOS.init();
 
 });
+
+
+$(document).ready(function () {
+
+  // owl Carousel
+  $('#sliderHead').owlCarousel({
+      loop:true,
+      margin:0,
+      center:true,
+      autoplay:true,
+      autoplayTimeout: 7000,
+      smartSpeed: 1000,
+      animateOut: 'fadeOut',
+      dragEndSpeed: 7000,
+      pagination : false,
+      nav:true,
+      navText: [
+          '<i class="icon-arrow-left"></i>',
+          '<i class="icon-arrow-right"></i>'
+      ],
+      responsive:{
+          0:{
+              items:1
+          },
+          900:{
+              items:1
+          },
+          1000:{
+              items:1
+          }
+      }
+  });
+
+});

@@ -8,11 +8,13 @@
 
     <!-- Css -->
 
-    <!-- CSS Font Awesome -->
+    <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" rel="stylesheet">
-    <!-- CSS Animation -->
+    <!-- Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- CSS Global Css -->
+    <!-- Owl Carousel 2 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css">
+    <!-- Global CSS -->
     <link rel="stylesheet" href="./css/global.css">
 
 </head>
@@ -28,54 +30,124 @@
     <!-- Header -->
     <header>
         <div class="container">
-            <a href="" class="logo">رحلتنا اليوم</a>
-            <div class="links-header">
-                <ul>
-                    <li>
-                        <a href="">الرئيسية</a>
-                    </li>
-                    <li>
-                        <a href="">أسيا</a>
-                    </li>
-                    <li>
-                        <a href="">افريقيا</a>
-                    </li>
-                    <li>
-                        <a href="">اوروبا</a>
-                    </li>
-                    <li>
-                        <a href="">استراليا</a>
-                    </li>
-                    <li>
-                        <a href="">أمريكا الشمالية</a>
-                    </li>
-                    <li>
-                        <a href="">أمريكا الجنوبية</a>
-                    </li>
-                </ul>
-                <div class="head-search">
-                    <a href="">
-
-                    </a>
-                    <div class="view-search">
-                        <form action="">
-                            <input type="text" placeholder="">
-                            <button class=""></button>
-                        </form>
+            <div class="head-content">
+                <a href="" class="logo">رحلتنا اليوم</a>
+                <div class="links-header">
+                    <ul>
+                        <li class="active">
+                            <a href="">الرئيسية</a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span>
+                                    أسيا
+                                </span>
+                                <i class="fa-solid fa-caret-down"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span>
+                                    افريقيا
+                                </span>
+                                <i class="fa-solid fa-caret-down"></i>
+                            </a>
+                            <div class="drop-down">
+                                <ul>
+                                    <li><a href="">مصر</a></li>
+                                    <li><a href="">السودان</a></li>
+                                    <li><a href="">المغرب</a></li>
+                                    <li><a href="">تنزانيا</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span>
+                                    اوروبا
+                                </span>
+                                <i class="fa-solid fa-caret-down"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span>
+                                    استراليا
+                                </span>
+                                <i class="fa-solid fa-caret-down"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span>
+                                    أمريكا الشمالية
+                                </span>
+                                <i class="fa-solid fa-caret-down"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span>
+                                    أمريكا الجنوبية
+                                </span>
+                                <i class="fa-solid fa-caret-down"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="head-search">
+                        <a href="">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </a>
+                        <div class="view-search">
+                            <form action="">
+                                <input type="text" placeholder="اكتب ما تريد البحث عنه">
+                                <button>
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
+    <!-- Slider Head -->
+    <div id="sliderHead" class="owl-carousel owl-theme slider-head">
+        <div class="item">
+            <div class="head-slide position-relative">
+                <img src="https://image.cnbcfm.com/api/v1/image/106616793-1594805802117gettyimages-900809876.jpg?v=1594864515" alt="">
+                <div class="over-fix">
+                    <div class="container">
+                        <h1>ابداء رحلتك الان</h1>
+                        <h4>استكشف الفعاليات والأنشطة السياحية التي يمكنك الاستمتاع بها</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="head-slide position-relative">
+                <img src="https://media.timeout.com/images/105242481/750/422/image.jpg" alt="">
+                <div class="over-fix">
+                    <div class="container">
+                        <h1>ابداء رحلتك الان</h1>
+                        <h4>استكشف الفعاليات والأنشطة السياحية التي يمكنك الاستمتاع بها</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!-- Script -->
 
-    <!-- Plugin Jquery -->
+    <!-- Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- Plugin Animation Page -->
+    <!-- Animation Page -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- Plugin Js -->
+    <!-- Owl Carousel 2 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
+    <!-- Global Js -->
     <script src="./js/main.js"></script>
 
 
