@@ -430,6 +430,48 @@ header .head-content .links-header .head-search .view-search form button {
   font-weight: normal;
 }
 
+.slider-head .owl-dots {
+  position: absolute;
+  top: auto;
+  bottom: 20px;
+  -webkit-transform: initial;
+          transform: initial;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.slider-head .owl-dots button {
+  height: auto !important;
+  line-height: 0 !important;
+}
+
+.slider-head .owl-dots button span {
+  background-color: var(--white);
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.slider-head .owl-dots .active span {
+  background-color: var(--secondColor);
+}
+
 .slider-head .owl-item.active h1, .slider-head .owl-item.active h4 {
   -webkit-animation-name: translateInfo;
           animation-name: translateInfo;
